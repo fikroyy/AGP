@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 
   <head>
 
@@ -49,7 +49,7 @@
                         <a class="nav-link" href="#">(logo) Find AGP Location</a>
                     </li>
                     <li class="nav-item active" style="padding-left: 10px; padding-right: 30px;">
-                        <a class="nav-link" href="{{route("login")}}">Masuk</a>
+                        <a class="nav-link" href="<?php echo e(route("login")); ?>">Masuk</a>
                   </li>            
                 </ul>
               </div>

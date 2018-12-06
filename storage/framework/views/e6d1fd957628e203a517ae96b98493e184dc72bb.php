@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 
   <head>
 
@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/pic/AGP.png" type="image/png" />
 
-    <title>Menu | Ayam Geprek Pejuang</title>
+    <title>Booking - Ayam Geprek Pejuang</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -24,7 +24,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-red">
             <div class="container">
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="home.html">
                 <img src="/pic/AGP.png" width="92" height="76" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,15 +33,15 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Promo
+                    <a class="nav-link" href="#">PROMO
                       <span class="sr-only">(current)</span>
                     </a>
                   </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/menu">Menu</a>
-                  </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/booking">Booking</a>
+                    <a class="nav-link" href="/menu">MENU</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/booking">BOOKING</a>
                   </li>
                 </ul>
                 <div class="kanan-spacing">
@@ -50,54 +50,62 @@
                         <a class="nav-link" href="#">(logo) Find AGP Location</a>
                     </li>
                     <li class="nav-item active" style="padding-left: 10px; padding-right: 30px;">
-                        <a class="nav-link" href="{{route("login")}}">Masuk</a>
+                        <a class="nav-link" href="#">Sign In</a>
                     </li>            
                     </ul>
                 </div>
               </div>
             </div>
           </nav>
+        
+        <div class="container">
+          <div style="margin-top: 10%; height: 30px;" class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 33%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Step 1 of 3</div>
+          </div>
+          <br>
+          <h1 style="text-align: center">PILIH TEMPAT YAH ANJING</h1>
+          <br>
 
-        <header>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                  </ol>
-                  <div class="carousel-inner" role="listbox">
-                    <!-- Slide One - Set the background image for this slide in the line below -->
-                    <div class="carousel-item active" style="background-image: url('/pic/IMG_1665.jpg')">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h3>Promo Merdeka</h3>
-                        <p>Diskon 50% untuk Ayam Geprek Original.</p>
+          <div class="container">
+            <div class="row">
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">AGP Babakan Raya</a>
+                          </h4>
+                          <p class="card-text">Tombol gitu disini ntar</p>
+                        </div>
                       </div>
                     </div>
-                    <!-- Slide Two - Set the background image for this slide in the line below -->
-                    <div class="carousel-item" style="background-image: url('/pic/IMG_1778.jpg')">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h3>Promo PANAS</h3>
-                        <p>Khusus buat kamu yang malam mingguan!</p>
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">AGP Babakan Lebak</a>
+                          </h4>
+                          <p class="card-text">Tombol gitu disini ntar</p>
+                        </div>
                       </div>
                     </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
-                    <div class="carousel-item" style="background-image: url('/pic/IMG_1555.jpg')">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h3>Paket Padang</h3>
-                        <p>Rasakan nikmat saos padang dengan harga diskon 30%</p>
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">AGP Kota</a>
+                          </h4>
+                          <p class="card-text">Tombol</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-              </header>
+            </div>
+
+        </div>
+        </div>
+        
 
     <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

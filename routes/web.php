@@ -5,9 +5,12 @@ Route::get('/', function () {
 });
 
 Route::get('/menu', function () {
-    return view('Agp/menu');
+    return view('/Agp/menu');
 });
 
 Route::get('/booking', function () {
-	return view('Agp/booking');
+	return view('/Agp/booking');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

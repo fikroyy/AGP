@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 
   <head>
 
@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/pic/AGP.png" type="image/png" />
 
-    <title>Menu | Ayam Geprek Pejuang</title>
+    <title>Menu - Ayam Geprek Pejuang</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -24,7 +24,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-red">
             <div class="container">
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="home.html">
                 <img src="/pic/AGP.png" width="92" height="76" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,15 +33,15 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Promo
+                    <a class="nav-link" href="#">PROMO
                       <span class="sr-only">(current)</span>
                     </a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="/menu">Menu</a>
+                    <a class="nav-link" href="/menu">MENU</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/booking">Booking</a>
+                    <a class="nav-link" href="/booking">BOOKING</a>
                   </li>
                 </ul>
                 <div class="kanan-spacing">
@@ -50,7 +50,7 @@
                         <a class="nav-link" href="#">(logo) Find AGP Location</a>
                     </li>
                     <li class="nav-item active" style="padding-left: 10px; padding-right: 30px;">
-                        <a class="nav-link" href="{{route("login")}}">Masuk</a>
+                        <a class="nav-link" href="#">Sign In</a>
                     </li>            
                     </ul>
                 </div>
