@@ -7,18 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/pic/AGP.png" type="image/png" />
+    <link rel="icon" href="/pic/AGP.png" type="image/png"/>
 
-    <title>Booking - Ayam Geprek Pejuang</title>
+    <title>Booking | Ayam Geprek Pejuang</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="css/logo-nav.css" rel="stylesheet">
-@guest
-<meta http-equiv="Refresh" content="0; URL={{route("login")}}">
-@else
+
   </head>
 
   <body>
@@ -52,7 +50,7 @@
                         <a class="nav-link" href="#">(logo) Find AGP Location</a>
                     </li>
                     <li class="nav-item active" style="padding-left: 10px; padding-right: 30px;">
-                        <a class="nav-link" href="{{route("login")}}">Masuk</a>
+                        <a class="nav-link" href="{{route('login')}}">Masuk</a>
                     </li>            
                     </ul>
                 </div>
@@ -65,7 +63,7 @@
             <div class="progress-bar bg-success" role="progressbar" style="width: 33%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Step 1 of 3</div>
           </div>
           <br>
-          <h1 style="text-align: center">Silahkan pilih tempat</h1>
+          <h1 style="text-align: center">Lokasi AGP</h1>
           <br>
 
           <div class="container">
@@ -115,6 +113,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   </body>
-  @endguest
 
 </html>
