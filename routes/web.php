@@ -25,4 +25,8 @@ Route::get('/booking', function () {
 	return view('/Agp/booking');
 });
 
+Route::get('/booking2', function () {
+	return view('/Agp/booking_2');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
