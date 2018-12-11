@@ -17,19 +17,23 @@ Route::get('/', function () {
 
 Route::get('/menu', function () {
     return view('/Agp/menu');
-});
+})->name('menu');
 
 Route::get('/lokasi', function () {
     return view('/Agp/lokasi');
-});
+})->name('lokasi');
 
-Route::get('/admin_booking', 'BookingController@admin_book');
-Route::resource('booking', 'BookingController');
+Route::prefix('admin')->group(function() {
+	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/dashboard', 'AdminController@adminDashboard')->name('admin.home');
+});
 
 Auth::routes();
 
+
 Route::get('/booking', function () {
 	return view('/Agp/booking');
-});
+})->name('booking');
 
 Route::get('/home', 'HomeController@index')->name('home');

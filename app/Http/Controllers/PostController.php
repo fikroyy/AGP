@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Booking;
+use App\Post;
 
-class BookingController extends Controller
+class PostController extends Controller
 {
     //
 }

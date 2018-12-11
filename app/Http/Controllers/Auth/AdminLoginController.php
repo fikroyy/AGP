@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use App\Admin;
 
 class AdminLoginController extends Controller
 {
@@ -16,7 +17,7 @@ class AdminLoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view(’auth.admin-login’);
+        return view('auth.admin-login');
     }
 
     protected function guard(){
