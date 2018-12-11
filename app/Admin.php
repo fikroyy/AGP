@@ -29,4 +29,13 @@ class Admin extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // defining relationships
+    public function posts() {
+        return $this->hasMany('App\Post');
+    }
+
+    public function promos() {
+        return $this->hasMany('App\Promo');
+    }
 }
