@@ -8,4 +8,8 @@ use App\Menu;
 class MenuController extends Controller
 {
     //
+    public function home(){
+        $menu = Menu::All();
+        return view('/agp/menu', compact('menu'));
+    }
 }

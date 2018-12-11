@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/menu', function () {
-    return view('/Agp/menu');
-})->name('menu');
+Route::get('/menu', 'MenuController@home')->name('menu');
 
 Route::get('/lokasi', function () {
     return view('/Agp/lokasi');
