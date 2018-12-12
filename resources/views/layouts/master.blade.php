@@ -5,6 +5,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AGP - Admin</title>
@@ -118,7 +120,10 @@ desired effect
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="{{ route('admin.logout') }}" class="btn btn-default btn-flat">Logout</a>
+                  <form id="admin-logout-form" action="{{ route('admin.logout') }}" method="POST">
+                      @csrf
+                      <button type="submit" class="btn btn-primary">Logout</button>
+                  </form></td>
                 </div>
               </li>
             </ul>
@@ -207,4 +212,14 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. -->
 </body>
+@if(session('info'))
+<div id="test" class="modal">
+  <img src="/pic/crosscheck.png" width="56" height="10" alt="" style="display: block; margin-left: auto; margin-right: auto;">
+  <p align="center"> {{ session('info') }}</p>
+</div>
+
+<script>
+$("#test").modal('show');
+</script>
+@endif
 </html>

@@ -3,7 +3,7 @@
 @section('active-sidebar')
 <li class="active"><a href="{{route('admin.booking')}}"><i class="fa fa-link"></i> <span>Booking</span></a></li>
 <li><a href="{{route('admin.promo')}}"><i class="fa fa-link"></i> <span>Kode Promo</span></a></li>
-<li class="active"><a href="{{route('admin.menu')}}"><i class="fa fa-link"></i> <span>Menu makanan</span></a></li>
+<li><a href="{{route('admin.menu')}}"><i class="fa fa-link"></i> <span>Menu makanan</span></a></li>
 @endsection
 
 @section('content')
@@ -66,7 +66,15 @@ tr:nth-child(even) {
                                                 <td>{{ $booking->people_amount }}</td>
                                                 <td>{{ $booking->phone }}</td>
                                                 <td>{{ $booking->status }}</td>
-                                                <td> <a href="#">Terima Pesanan Booking</a></td>
+                                                <td>
+                                                    @if ($booking->status == 'BELUM DATANG')
+                                                    <form id="change-status-booking-form" action="{{ route('admin.booking.change_status', $booking->id) }}" method="POST">
+                                                        {!! method_field('post') !!}
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger">Ubah status pesanan</button>
+                                                    </form>
+                                                    @endif
+                                                </td>
                                             </tr>
                                         @endif
                                     @endforeach

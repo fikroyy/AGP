@@ -47,7 +47,7 @@ tr:nth-child(even) {
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <button type="button" class="btn btn-primary" href="#">Buat menu baru</button>
+                    <a href="{{ route('admin.menu.add') }}"><button type="button" class="btn btn-primary">Buat menu baru</button></a>
                     <div class="card">
                         <div class="card-body">
                                 <table>
@@ -65,7 +65,13 @@ tr:nth-child(even) {
                                                 <td>{{ $menu->price }}</td>
                                                 <td>{{ $menu->stock }}</td>
                                                 <td>{{ $menu->images }}</td>
-                                                <td><a href="#">Edit</a>  <a href="#">Hapus</a></td>
+                                                <td>
+                                                    <form id="delete-menu-form" action="{{ route('admin.menu.delete', $menu->id) }}" method="POST">
+                                                        {!! method_field('delete') !!}
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger">Hapus menu</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         @endif
                                     @endforeach
