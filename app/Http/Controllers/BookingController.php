@@ -29,6 +29,7 @@ class BookingController extends Controller
         $Booking->book_date=$book_date;
         $Booking->book_time=$book_time;
         $Booking->phone=$phone;
+        $Booking->status='BELUM DATANG';
         $Booking->people_amount=$people_amount;
         $Booking->save();
         return back();
