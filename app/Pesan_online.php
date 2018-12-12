@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class Pesan_online extends Model
 {
     public function user() {
         return $this->belongsTo('App\User');
@@ -18,9 +18,6 @@ class Booking extends Model
         return $this->belongsToMany('App\Pesan_online');
     }
 
-    public function seat() {
-        return $this->hasOne('App\Seat');
-    }
-    protected $table="bookings";
-    protected $fillable = ["name", "book_date", "book_time", "people_amount", "phone"];
+    protected $table="orders";
+    protected $fillable = ["name", "menu", "pcs", "your_money", "phone", "locate", "time", "level", "note", "voucher"];
 }

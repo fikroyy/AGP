@@ -13,4 +13,8 @@ class Menu extends Model
     public function menus() {
         return $this->belongsTo('App\Admin');
     }
+
+    public function pesan_onlines() {
+        return $this->belongsToMany('App\Pesan_online');
+    }
 }

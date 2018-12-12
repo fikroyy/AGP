@@ -36,7 +36,7 @@
                 <ul class="navbar-nav mr-auto">
                 @guest
                   <li class="nav-item">
-                    <a class="nav-link" href="/">Home
+                    <a class="nav-link" href="{{ route('pesan_online') }}">Pesan Online
                       <span class="sr-only">(current)</span>
                     </a>
                   </li>
@@ -49,7 +49,7 @@
                 @else
                     @if (Route::currentRouteName() != 'login')
                       <li class="nav-item">
-                        <a class="nav-link" href="/">Home
+                        <a class="nav-link" href="{{ route('pesan_online') }}">Pesan Online
                           <span class="sr-only">(current)</span>
                         </a>
                       </li>
@@ -114,5 +114,6 @@
 <script>
 $("#test").modal('show');
 </script>
+
 @endif
 </html>

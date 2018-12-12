@@ -35,10 +35,16 @@ Route::prefix('admin')->group(function() {
     Route::get('/menu', 'MenuController@index')->name('admin.menu');
 });
 
+
 Route::get('/booking', function () {
 	return view('/Agp/booking');
 })->name('booking');
 
+Route::get('/pesan_online', function () {
+	return view('/Agp/Pesan_online');
+})->name('pesan_online');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/BookingInsert', 'BookingController@store');
+Route::post('/Pesan_onlineInsert', 'Pesan_onlineController@store');
