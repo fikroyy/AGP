@@ -2,7 +2,7 @@
 
 @section('active-sidebar')
 <li><a href="{{route('admin.booking')}}"><i class="fa fa-link"></i> <span>Booking</span></a></li>
-<li class="active"><a href="{{route('admin.promo')}}"><i class="fa fa-link"></i> <span>Kode promo</span></a></li>
+<li class="active"><a href="{{route('admin.promo')}}"><i class="fa fa-link"></i> <span>Kode Promo</span></a></li>
 @endsection
 
 @section('content')
@@ -31,13 +31,13 @@ tr:nth-child(even) {
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Daftar promo
+        Daftar Promo
         <!--<small>Optional description</small>-->
       </h1>
-      <ol class="breadcrumb">
+      <!-- <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>
-      </ol>
+      </ol> -->
     </section>
 
     <!-- Main content -->
