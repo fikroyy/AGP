@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Admin;
-
+use App\Booking;
 class AdminController extends Controller
 {
     /**
@@ -22,7 +22,12 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function adminDashboard()
-    {
-        return view('admin');
+    {   
+        $bookings = Booking::all();
+        return view('admin/admin_booking', compact('bookings'));
+    }
+    public function redirectToBooking()
+    {   
+        return redirect()->route('admin.booking');
     }
 }

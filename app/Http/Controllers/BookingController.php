@@ -33,4 +33,8 @@ class BookingController extends Controller
         $Booking->save();
         return back();
     }
+    public function index() {
+    	$bookings = Booking::all();
+    	return view('admin/admin_booking', compact('bookings'));
+    }
 }

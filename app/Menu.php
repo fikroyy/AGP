@@ -9,4 +9,8 @@ class Menu extends Model
     public function bookings() {
         return $this->belongsToMany('App\Booking');
     }
+
+    public function bookings() {
+        return $this->belongsTo('App\Admin');
+    }
 }
