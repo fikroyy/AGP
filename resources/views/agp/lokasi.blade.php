@@ -68,7 +68,7 @@
             <div class="row">
                     <div class="col-lg-4 col-sm-6 portfolio-item">
                       <div class="card h-100">
-                        <a><img class="card-img-top" src="/pic/QR_babakan.png" width="250" height="250" alt=""></a>
+                        <a><img class="card-img-top" src="/pic/lokasi1.png" width="250" height="250" alt=""></a>
                         <div class="card-body">
                           <h4 class="card-title">
                             <a>AGP Babakan Raya</a>

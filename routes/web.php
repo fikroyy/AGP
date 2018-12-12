@@ -34,3 +34,5 @@ Route::get('/booking', function () {
 })->name('booking');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/BookingInsert', 'BookingController@store');

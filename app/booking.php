@@ -17,4 +17,6 @@ class Booking extends Model
     public function seat() {
         return $this->hasOne('App\Seat');
     }
+    protected $table="bookings";
+    protected $fillable = ["name", "book_date", "book_time", "people_amount", "phone"];
 }
