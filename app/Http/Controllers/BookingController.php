@@ -32,7 +32,7 @@ class BookingController extends Controller
         $Booking->status='BELUM DATANG';
         $Booking->people_amount=$people_amount;
         $Booking->save();
-        return back();
+        return back()->with('info','Pesanan tempat anda telah diproses untuk selanjutnya tunggu konfirmasi dari admin lewat Whatsapp, Trimakasih :).');
     }
     public function index() {
     	$bookings = Booking::all();
