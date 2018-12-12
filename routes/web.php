@@ -21,15 +21,17 @@ Route::get('/lokasi', function () {
     return view('/Agp/lokasi');
 })->name('lokasi');
 
+
+Auth::routes();
+
 Route::prefix('admin')->group(function() {
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'AdminController@redirectToBooking')->name('admin');
     Route::get('/booking', 'AdminController@adminDashboard')->name('admin.home');
     Route::get('/booking', 'BookingController@index')->name('admin.booking');
     Route::get('/promo', 'PromoController@index')->name('admin.promo');
 });
-
-Auth::routes();
 
 Route::get('/booking', function () {
 	return view('/Agp/booking');

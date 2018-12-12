@@ -26,4 +26,8 @@ class AdminController extends Controller
         $bookings = Booking::all();
         return view('admin/admin_booking', compact('bookings'));
     }
+    public function redirectToBooking()
+    {   
+        return redirect()->route('admin.booking');
+    }
 }

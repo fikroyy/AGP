@@ -17,6 +17,7 @@ class CreatePromosTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('code');
+            $table->float('percentage');
             $table->date('valid_from');
             $table->date('valid_until');
             $table->timestamps();

@@ -38,4 +38,8 @@ class Admin extends Authenticatable
     public function promos() {
         return $this->hasMany('App\Promo');
     }
+
+    public function menu() {
+        return $this->hasMany('App\Menu');
+    }
 }

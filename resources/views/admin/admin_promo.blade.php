@@ -51,6 +51,7 @@ tr:nth-child(even) {
                                 <table>
                                     <th>Judul</th>
                                     <th>Kode</th>
+                                    <th>Persen diskon</th>
                                     <th>Valid dari</th>
                                     <th>Valid sampai</th>
                                     <th>Action</th>
@@ -59,6 +60,7 @@ tr:nth-child(even) {
                                             <tr>
                                                 <td>{{ $promo->title }}</td>
                                                 <td>{{ $promo->code }}</td>
+                                                <td>{{ $promo->percentage }}</td>
                                                 <td>{{ $promo->valid_from }}</td>
                                                 <td>{{ $promo->valid_until }}</td>
                                                 <td> <a href="#">Hapus kode promo</a></td>
