@@ -20,6 +20,14 @@ class AdminLoginController extends Controller
         return view('auth.admin-login');
     }
 
+    public function logout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect()->guest(route ('admin.login'))
+    }
+
     protected function guard(){
         return Auth::guard('admin');
     }

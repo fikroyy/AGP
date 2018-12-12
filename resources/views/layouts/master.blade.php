@@ -22,6 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="{{asset('bower_components/admin-lte/dist/css/skins/_all-skins.css')}}">
 
+  <link rel="icon" href="/pic/AGP.png" type="image/png"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -102,26 +103,22 @@ desired effect
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">nama-admin</span>
+              <span class="hidden-xs">{{ Auth::guard('admin')->user()->email }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                 <p>
-                  nama-admin
-                  <small>Admin</small>
+                  {{ Auth::guard('admin')->user()->email }}
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('admin.logout') }}" class="btn btn-default btn-flat">Logout</a>
                 </div>
               </li>
             </ul>
@@ -139,10 +136,11 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+         <br>
+          <br>
         </div>
         <div class="pull-left info">
-          <p>nama-admin</p>
+          <p>{{ Auth::guard('admin')->user()->email }}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -187,11 +185,11 @@ desired effect
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
-    <div class="pull-right hidden-xs">
+    <!-- <div class="pull-right hidden-xs">
       Anything you want
-    </div>
+    </div> -->
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="#">Ayam Geprek Pejuang</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018 <a href="https://www.instagram.com/ag_pejuang/">Ayam Geprek Pejuang</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
