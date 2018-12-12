@@ -12,4 +12,9 @@ class MenuController extends Controller
         $menu = Menu::All();
         return view('/agp/menu', compact('menu'));
     }
+
+    public function index(){
+        $menus = Menu::All();
+        return view('/admin/admin_menu', compact('menus'));
+    }
 }

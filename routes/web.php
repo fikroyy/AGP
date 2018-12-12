@@ -27,11 +27,12 @@ Auth::routes();
 Route::prefix('admin')->group(function() {
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::post('/logout', 'AdminLoginController@logout')->name('admin.logout');
+    Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     Route::get('/', 'AdminController@redirectToBooking')->name('admin');
     Route::get('/booking', 'AdminController@adminDashboard')->name('admin.home');
     Route::get('/booking', 'BookingController@index')->name('admin.booking');
     Route::get('/promo', 'PromoController@index')->name('admin.promo');
+    Route::get('/menu', 'MenuController@index')->name('admin.menu');
 });
 
 Route::get('/booking', function () {

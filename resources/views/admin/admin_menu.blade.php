@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('active-sidebar')
-<li class="active"><a href="{{route('admin.booking')}}"><i class="fa fa-link"></i> <span>Booking</span></a></li>
+<li><a href="{{route('admin.booking')}}"><i class="fa fa-link"></i> <span>Booking</span></a></li>
 <li><a href="{{route('admin.promo')}}"><i class="fa fa-link"></i> <span>Kode Promo</span></a></li>
 <li class="active"><a href="{{route('admin.menu')}}"><i class="fa fa-link"></i> <span>Menu makanan</span></a></li>
 @endsection
@@ -32,7 +32,7 @@ tr:nth-child(even) {
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Permintaan Booking
+        Daftar menu
         <br>
         <!--<small>Optional description</small>-->
       </h1>
@@ -47,26 +47,25 @@ tr:nth-child(even) {
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
+                    <button type="button" class="btn btn-primary" href="#">Buat menu baru</button>
                     <div class="card">
                         <div class="card-body">
                                 <table>
-                                    <th>Atas nama</th>
-                                    <th>Untuk tanggal</th>
-                                    <th>Pada jam</th>
-                                    <th>Jumlah orang</th>
-                                    <th>Telepon</th>
-                                    <th>Status</th>
+                                    <th>Nama menu</th>
+                                    <th>Deskripsi</th>
+                                    <th>Harga</th>
+                                    <th>Stok</th>
+                                    <th>Gambar</th>
                                     <th>Action</th>
-                                    @foreach ($bookings as $booking)
-                                        @if ($bookings)
+                                    @foreach ($menus as $menu)
+                                        @if ($menus)
                                             <tr>
-                                                <td>{{ $booking->name }}</td>
-                                                <td>{{ $booking->book_date }}</td>
-                                                <td>{{ $booking->book_time }}</td>
-                                                <td>{{ $booking->people_amount }}</td>
-                                                <td>{{ $booking->phone }}</td>
-                                                <td>{{ $booking->status }}</td>
-                                                <td> <a href="#">Terima Pesanan Booking</a></td>
+                                                <td>{{ $menu->title }}</td>
+                                                <td>{{ $menu->description }}</td>
+                                                <td>{{ $menu->price }}</td>
+                                                <td>{{ $menu->stock }}</td>
+                                                <td>{{ $menu->images }}</td>
+                                                <td><a href="#">Edit</a>  <a href="#">Hapus</a></td>
                                             </tr>
                                         @endif
                                     @endforeach
