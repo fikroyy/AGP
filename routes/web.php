@@ -31,8 +31,15 @@ Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@redirectToBooking')->name('admin');
     Route::get('/booking', 'AdminController@adminDashboard')->name('admin.home');
     Route::get('/booking', 'BookingController@index')->name('admin.booking');
+    Route::post('/booking/change_status/{id}', 'BookingController@change_status')->name('admin.booking.change_status');
     Route::get('/promo', 'PromoController@index')->name('admin.promo');
+    Route::delete('/promo/delete/{id}', 'PromoController@delete')->name('admin.promo.delete');
+    Route::get('/promo-add', 'PromoController@add')->name('admin.promo.add');
+    Route::post('/promo-add', 'PromoController@store')->name('admin.promo.store');
     Route::get('/menu', 'MenuController@index')->name('admin.menu');
+    Route::delete('/menu/delete/{id}', 'MenuController@delete')->name('admin.menu.delete');
+    Route::get('/menu-add', 'MenuController@add')->name('admin.menu.add');
+    Route::post('/menu-add', 'MenuController@store')->name('admin.menu.store');
 });
 
 Route::get('/booking', function () {

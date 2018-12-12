@@ -46,7 +46,7 @@ tr:nth-child(even) {
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <button type="button" class="btn btn-primary" href="#">Buat promo baru</button>
+                    <a href="{{ route('admin.promo.add') }}"><button type="button" class="btn btn-primary">Buat promo baru</button></a>
                     <div class="card">
                         <div class="card-body">
                                 <table>
@@ -64,7 +64,13 @@ tr:nth-child(even) {
                                                 <td>{{ $promo->percentage }}</td>
                                                 <td>{{ $promo->valid_from }}</td>
                                                 <td>{{ $promo->valid_until }}</td>
-                                                <td> <a href="#">Hapus kode promo</a></td>
+                                                <td>
+                                                    <form id="delete-promo-form" action="{{ route('admin.promo.delete', $promo->id) }}" method="POST">
+                                                        {!! method_field('delete') !!}
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger">Hapus kode promo</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         @endif
                                     @endforeach

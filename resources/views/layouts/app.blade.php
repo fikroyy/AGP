@@ -104,10 +104,10 @@
     </div>
     <script src="{{ asset('/js/app.js') }}"></script>
 </body>
-@if(session()->has('info'))
+@if(session('info'))
 <div id="test" class="modal">
   <img src="/pic/crosscheck.png" width="56" height="56" alt="" style="display: block; margin-left: auto; margin-right: auto;">
-  <p> Selamat, Pesanan tempat anda telah diproses untuk selanjutnya tunggu konfirmasi dari admin lewat Whatsapp, Trimakasih :)</p>
+  <p> {{ session('info') }}</p>
 </div>
 
 

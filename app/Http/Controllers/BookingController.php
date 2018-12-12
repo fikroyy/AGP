@@ -38,4 +38,12 @@ class BookingController extends Controller
     	$bookings = Booking::all();
     	return view('admin/admin_booking', compact('bookings'));
     }
+
+    public function change_status($id) {
+        $booking = Booking::find($id);
+        $booking->status = 'SUDAH DATANG';
+        $booking->save();
+
+        return redirect(route('admin.booking'))->with('info', 'Status booking berhasil diubah!');
+    }
 }
