@@ -10,7 +10,7 @@ class Menu extends Model
         return $this->belongsToMany('App\Booking');
     }
 
-    public function bookings() {
+    public function menus() {
         return $this->belongsTo('App\Admin');
     }
 }

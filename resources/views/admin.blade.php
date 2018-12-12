@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<br>
-<br>
-<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -17,11 +14,10 @@
                         </div>
                     @endif
 
-                    Kamu telah login!
+                    You are logged in!
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
