@@ -38,7 +38,7 @@ class Pesan_onlineController extends Controller
         $Pesan_online->phone=$phone;
         $Pesan_online->locate=$locate;
         $Pesan_online->time=$time;
-        $Pesan_online->note=$voucher;
+        $Pesan_online->voucher=$voucher;
         $Pesan_online->note=$note;
         $Pesan_online->status='BELUM KONFIRMASI';
         $Pesan_online->save();
