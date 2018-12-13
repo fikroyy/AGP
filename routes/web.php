@@ -32,6 +32,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/booking', 'AdminController@adminDashboard')->name('admin.home');
     Route::get('/booking', 'BookingController@index')->name('admin.booking');
     Route::post('/booking/change_status/{id}', 'BookingController@change_status')->name('admin.booking.change_status');
+    Route::get('/order', 'Pesan_onlineController@index')->name('admin.order');
+    Route::post('/order/change_status/{id}', 'Pesan_onlineController@change_status')->name('admin.order.change_status');
     Route::get('/promo', 'PromoController@index')->name('admin.promo');
     Route::delete('/promo/delete/{id}', 'PromoController@delete')->name('admin.promo.delete');
     Route::get('/promo-add', 'PromoController@add')->name('admin.promo.add');

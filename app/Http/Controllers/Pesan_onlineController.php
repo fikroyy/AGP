@@ -10,7 +10,7 @@ class Pesan_onlineController extends Controller
 
     public function Insert()
     {
-        return view('Pesan_online');
+        return view('agp\Pesan_online');
             // 'name' => $data['name'],
             // 'book_time' => $data['book_time'],
             // 'book_date' => $data['book_date'],
@@ -45,7 +45,15 @@ class Pesan_onlineController extends Controller
         return back()->with('info','Pesanan tempat anda telah diproses untuk selanjutnya tunggu konfirmasi dari admin lewat Whatsapp, Trimakasih :).');
     }
     public function index() {
-    	$pesan_online = Pesan_online::all();
-    	return view('admin/admin_booking', compact('pesan_online'));
+    	$orders = Pesan_online::all();
+    	return view('admin/admin_order', compact('orders'));
+    }
+
+    public function change_status($id) {
+        $order = Pesan_online::find($id);
+        $order->status = 'SUDAH KONFIRMASI';
+        $order->save();
+
+        return redirect(route('admin.order'))->with('info', 'Status order berhasil diubah!');
     }
 }

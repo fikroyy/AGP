@@ -4,6 +4,7 @@
 <li><a href="{{route('admin.booking')}}"><i class="fa fa-link"></i> <span>Booking</span></a></li>
 <li class="active"><a href="{{route('admin.promo')}}"><i class="fa fa-link"></i> <span>Kode Promo</span></a></li>
 <li><a href="{{route('admin.menu')}}"><i class="fa fa-link"></i> <span>Menu makanan</span></a></li>
+<li><a href="{{route('admin.order')}}"><i class="fa fa-link"></i> <span>Order online</span></a></li>
 @endsection
 
 @section('content')

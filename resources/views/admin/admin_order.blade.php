@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('active-sidebar')
-<li class="active"><a href="{{route('admin.booking')}}"><i class="fa fa-link"></i> <span>Booking</span></a></li>
+<li><a href="{{route('admin.booking')}}"><i class="fa fa-link"></i> <span>Booking</span></a></li>
 <li><a href="{{route('admin.promo')}}"><i class="fa fa-link"></i> <span>Kode Promo</span></a></li>
 <li><a href="{{route('admin.menu')}}"><i class="fa fa-link"></i> <span>Menu makanan</span></a></li>
-<li><a href="{{route('admin.order')}}"><i class="fa fa-link"></i> <span>Order online</span></a></li>
+<li class="active"><a href="{{route('admin.order')}}"><i class="fa fa-link"></i> <span>Order online</span></a></li>
 @endsection
 
 @section('content')
@@ -13,7 +13,6 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    margin-left: 20%;
 }
 
 td, th {
@@ -33,7 +32,7 @@ tr:nth-child(even) {
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Permintaan Booking
+        Daftar order online
         <br>
         <!--<small>Optional description</small>-->
       </h1>
@@ -52,24 +51,34 @@ tr:nth-child(even) {
                         <div class="card-body">
                                 <table>
                                     <th>Atas nama</th>
-                                    <th>Untuk tanggal</th>
-                                    <th>Pada jam</th>
-                                    <th>Jumlah orang</th>
-                                    <th>Telepon</th>
+                                    <th>Menu</th>
+                                    <th>Level</th>
+                                    <th>Jumlah pesanan</th>
+                                    <th>Pecahan uang</th>
+                                    <th>No. telepon</th>
+                                    <th>Lokasi</th>
+                                    <th>Waktu</th>
+                                    <th>Voucher</th>
+                                    <th>Catatan</th>
                                     <th>Status</th>
                                     <th>Action</th>
-                                    @foreach ($bookings as $booking)
-                                        @if ($bookings)
+                                    @foreach ($orders as $order)
+                                        @if ($orders)
                                             <tr>
-                                                <td>{{ $booking->name }}</td>
-                                                <td>{{ $booking->book_date }}</td>
-                                                <td>{{ $booking->book_time }}</td>
-                                                <td>{{ $booking->people_amount }}</td>
-                                                <td>{{ $booking->phone }}</td>
-                                                <td>{{ $booking->status }}</td>
+                                                <td>{{ $order->name }}</td>
+                                                <td>{{ $order->menu }}</td>
+                                                <td>{{ $order->level }}</td>
+                                                <td>{{ $order->pcs }}</td>
+                                                <td>{{ $order->your_money }}</td>
+                                                <td>{{ $order->phone }}</td>
+                                                <td>{{ $order->locate }}</td>
+                                                <td>{{ $order->time }}</td>
+                                                <td>{{ $order->voucher }}</td>
+                                                <td>{{ $order->note }}</td>
+                                                <td>{{ $order->status }}</td>
                                                 <td>
-                                                    @if ($booking->status == 'BELUM DATANG')
-                                                    <form id="change-status-booking-form" action="{{ route('admin.booking.change_status', $booking->id) }}" method="POST">
+                                                    @if ($order->status == 'BELUM KONFIRMASI')
+                                                    <form id="change-status-booking-form" action="{{ route('admin.order.change_status', $order->id) }}" method="POST">
                                                         {!! method_field('post') !!}
                                                         @csrf
                                                         <button type="submit" class="btn btn-danger">Ubah status pesanan</button>
