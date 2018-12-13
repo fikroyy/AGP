@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Styles -->
     <link href="css/logo-nav.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 </head>
 <body>
     <!-- Navigation -->
@@ -102,18 +103,16 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('/js/app.js') }}"></script>
-</body>
-@if(session('info'))
+    @if(session('info'))
 <div id="test" class="modal">
   <img src="/pic/crosscheck.png" width="56" height="56" alt="" style="display: block; margin-left: auto; margin-right: auto;">
   <p> {{ session('info') }}</p>
 </div>
-
-
 <script>
 $("#test").modal('show');
 </script>
-
 @endif
+    <script src="{{ asset('/js/app.js') }}"></script>
+</body>
+
 </html>
