@@ -29,7 +29,7 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     Route::get('/', 'AdminController@redirectToBooking')->name('admin');
-    Route::get('/booking', 'AdminController@adminDashboard')->name('admin.home');
+    // Route::get('/dashboard', 'AdminController@adminDashboard')->name('admin.home');
     Route::get('/booking', 'BookingController@index')->name('admin.booking');
     Route::post('/booking/change_status/{id}', 'BookingController@change_status')->name('admin.booking.change_status');
     Route::get('/order', 'Pesan_onlineController@index')->name('admin.order');
